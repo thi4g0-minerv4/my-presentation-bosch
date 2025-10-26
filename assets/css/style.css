@@ -1,0 +1,395 @@
+/* style.css (Unificado) */
+
+/* Variáveis e Reset */
+:root {
+    --bosch-blue: #4fbeff; /* Um azul corporativo forte */
+    --primary-color: var(--bosch-blue);
+    --secondary-color: #0088f7;
+    --text-dark: #070707;
+    --text-light: #2e2e2e;
+    --background-light: #f4f7f9;
+    --card-background: #ffffff;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    padding-top: 60px; /* Espaço para o header fixo */
+}
+
+/* Links & Elementos Gerais */
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+p {
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+    color: var(--text-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Header e Navegação */
+.main-header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav li a {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+    opacity: 0.8;
+}
+
+.main-nav li a:hover {
+    opacity: 1;
+}
+
+.main-nav li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color); 
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav li a:hover::after {
+    width: 100%;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 900px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    margin-bottom: 0rem;
+    padding: 2rem 0;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.highlight-name {
+    color: #E30815;
+    font-weight: 900;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Sections de Conteúdo (Cards) */
+.content-section {
+    margin-bottom: 3.5rem;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--card-background);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    font-weight: 700;
+}
+
+.content-section h2 a { 
+    color: var(--secondary-color); 
+    text-decoration: none;
+}
+
+/* Sub-blocos (Educação, Hobbies) */
+.education-block, .hobby-card, .closing-block {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #e0e6ed;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.education-block h3, .hobby-card h3, .closing-block h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #e0e6ed;
+}
+
+.hobby-card {
+    background-color: #fcfdff; 
+}
+
+/*Imagens de Projeto */
+.project-img {
+    max-width: 400px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tags*/
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.curiosity {
+    font-style: italic;
+    color: var(--primary-color);
+    font-weight: 500;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 10px;
+}
+/* --- Novas Regras CSS para Imagens Lado a Lado --- */
+
+/* Container Flexbox para texto e imagem */
+.text-with-image-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre linha em telas menores */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    gap: 2rem; /* Espaçamento entre o texto e a imagem */
+    margin-top: 2rem;
+    justify-content: center; /* Centraliza horizontalmente em telas menores */
+}
+
+.text-with-image-container > div {
+    flex: 1; /* Faz o texto ocupar o espaço disponível */
+    min-width: 300px; /* Garante que o texto não fique muito apertado */
+}
+
+/* Estilo para a imagem de perfil grande */
+.large-profile-image {
+    width: 280px; /* Tamanho maior para a imagem */
+    height: 280px; /* Mantém o formato quadrado */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+    border-radius: 50%; /* Torna a imagem circular */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    border: 6px solid var(--primary-color); /* Borda colorida */
+    flex-shrink: 0; /* Evita que a imagem encolha em telas pequenas */
+}
+
+/* Estilo para a imagem de viagem grande */
+.large-travel-image {
+    width: 350px; /* Tamanho para a imagem de viagem */
+    height: 250px; /* Altura retangular para a imagem de viagem */
+    object-fit: cover;
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 6px solid var(--primary-color);
+    flex-shrink: 0;
+}
+/* --- Estilos para o Container de Duas Imagens na Seção de Hobbies --- */
+
+.two-image-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas menores */
+    gap: 1.5rem; /* Espaçamento entre as imagens */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.two-image-grid .project-img {
+    flex: 1 1 calc(50% - 1rem); /* Cada imagem ocupa aproximadamente 50% da largura, com o gap */
+    max-width: 300px; /* Limite de largura para não ficarem gigantes em telas muito largas */
+    height: 200px; /* Altura fixa para manter um layout consistente */
+    object-fit: cover; /* Garante que as imagens preencham a área sem distorção */
+    margin: 0; /* Remove a margem automática padrão de .project-img */
+    border: 3px solid var(--card-background); /* Borda mais fina */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/* Ajuste de responsividade para telas muito pequenas */
+@media (max-width: 550px) {
+    .two-image-grid .project-img {
+        flex: 1 1 100%; /* Em telas muito pequenas, as imagens podem ocupar 100% e empilhar */
+        max-width: 100%;
+        height: 220px; /* Ajusta a altura um pouco para melhor visualização */
+    }
+}
+
+
+section#final {
+    text-align: center;
+    margin: 150px 0px;
+    padding: 2rem 0;
+}
+section#final h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .text-with-image-container {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .text-with-image-container > div {
+        min-width: unset; 
+    }
+
+    .large-profile-image,
+    .large-travel-image {
+        width: 80%; 
+        max-width: 250px;
+        height: auto; 
+        border-radius: 50%;
+    }
+    .large-travel-image {
+        border-radius: 12px; 
+    }
+}
+
+
+/*Footer*/
+footer {
+    background-color: var(--secondary-color);
+
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+footer p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .main-nav .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    body {
+        padding-top: 100px; 
+    }
+}
+
